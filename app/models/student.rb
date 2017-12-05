@@ -15,10 +15,7 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(arg)
-    if arg == ""
-      return self.all
-    else
-      Student.all.map {|student| student if student.name.include?(arg.titleize)}
-    end
+    Student.all.map {|student| student if student.name.include?(arg.titleize)}.compact
+  
   end
 end
