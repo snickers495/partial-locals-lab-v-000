@@ -16,9 +16,9 @@ class Student < ActiveRecord::Base
 
   def search(arg)
     if arg == ""
-      return self.all 
-    else 
+      return self.all
+    else
       Student.all.detect {|student| student.include?(arg.capitalize)}
-    end 
+    end
   end
 end
