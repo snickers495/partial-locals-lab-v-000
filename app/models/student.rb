@@ -16,6 +16,6 @@ class Student < ActiveRecord::Base
 
   def self.search(arg)
     Student.all.map {|student| student if student.name.include?(arg.titleize)}.compact
-  
+
   end
 end
