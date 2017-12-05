@@ -18,7 +18,7 @@ class Student < ActiveRecord::Base
     if arg == ""
       return self.all
     else
-      Student.all.map {|student| student.name.include?(arg.capitalize)}
+      Student.all.map {|student| student if student.name.include?(arg.capitalize)}
     end
   end
 end
