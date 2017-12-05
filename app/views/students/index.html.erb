@@ -4,3 +4,7 @@ Search for a Student:
   <%=text_field_tag :search, params[:search]%>
   <%=submit_tag "Search"%>
 <%end%>
+
+<% @students.each do |s|%>
+<%= render partial: 'student', locals: {student: s}
+<% end %>
